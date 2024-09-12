@@ -8,70 +8,69 @@ import org.xml.sax.Locator;
 public interface SeleniumAPI {
 	
 /**
+ *This will provide url to the driver
  * @param url
  * @author Logesh
- * @return This will provide url to the driver
+ * 
  * @exception NoSuchElementException
  */
 	public void startup(String url);
 	/**
+	 * This is used to open  different WebBroswer
 	 * @author Logesh
 	 * @param browserName
 	 * @param url
-	 * @return This is used to open WebBroswer
+	 *  
 	 */
 
 	public void startup(String browserName,String url);
 	
 /**
- * @return This will close the current tab
+ *  This will close the current tab
  *  @author Logesh
  */
 	
 	public void close();
 	
 	/**
-	 * @return This will close the browser
+	 * This will close the browser
 	 * @author Logesh
 	 */
 	public void quit();
 	
 	
 	/**
-	 * @return This will used to find element
+	 *  This will used to find element
 	 * @param type
 	 * @param values
 	 * @exceptione {@link NoSuchElementException}
 	 * 
 	 */
 	//WebElement
-	public void WebElement(Locator type,String values);
+	public WebElement Element(String type,String values);
 	/**
-	 * @return used to click the element
+	 *  This will wait the element is clickable then click
 	 * @param ele
 	 * @author logesh
 	 */
 	public void click(WebElement ele);
 	
 	/**
-	 * @return Used to type the text in the field
+	 *  Used to clear the text data with the existing test data and send a new data
 	 * @param text
 	 */
 	public void type(WebElement ele,String textdata);
 	
 	/**
-	 * @return Used to append the text data with the existing test data
+	 *  Used to append with the exsting data
 	 * @param ele
 	 * @param testdata
 	 */
 	public void append(WebElement ele,String testdata);
-	/**
-	 * @return This is used to switch windows in the browser
-	 * @param i
-	 */
+	
 	
 	/**
-	 * @return This is used to switch one window to another
+	 *  This is used to switch one window to another
 	 * @param i
 	 */
 
@@ -85,7 +84,7 @@ public interface SeleniumAPI {
 	public void selectText(WebElement ele,String byVisiableText);
 	
 	/**
-	 * @return this is Used to select a drop down by using the value
+	 *  this is Used to select a drop down by using the value
 	 * @param ele
 	 * @param byValue
 	 */
@@ -93,26 +92,32 @@ public interface SeleniumAPI {
 	
 	/**
 	 * @param ele
-	 *@return This is used to select a dropdown by using index 
+	 * This is used to select a dropdown by using index 
 	 */
 	public void selectindex(WebElement ele,int position);
 	
-	/*@return This will return the current page title
+	/* This will return the current page title
 	 *@param 
 	 */
 	String gettitle();
 	
 	/**
 	 * 
-	 * @return this will turn the element is visible or not
+	 *  this will turn the element is visible or not
 	 */
 	boolean isDisplayed();
 	/**
 	 * 
-	 * @return This will return the current page url
+	 *  This will return the current page url
 	 */
 	
 	String getURL();
+	
+	/**
+	 * 
+	 *  This will says the element or field is intertable or not
+	 */
+	boolean isEnabled();
 
 	
 	
