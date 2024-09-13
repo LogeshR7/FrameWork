@@ -23,7 +23,7 @@ public interface SeleniumAPI {
 	 *  
 	 */
 
-	public void startup(String browserName,String url);
+	public void startup(Browser browserName,String url);
 	
 /**
  *  This will close the current tab
@@ -47,7 +47,7 @@ public interface SeleniumAPI {
 	 * 
 	 */
 	//WebElement
-	public WebElement Element(String type,String values);
+	public WebElement element(Locators type,String values);
 	/**
 	 *  This will wait the element is clickable then click
 	 * @param ele

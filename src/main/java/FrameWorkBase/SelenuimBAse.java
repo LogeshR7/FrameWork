@@ -5,6 +5,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.bouncycastle.oer.Switch;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -19,8 +20,8 @@ public class SelenuimBAse implements SeleniumAPI {
 	
 	WebDriverWait wait;
 	long maxWaittime=10;
-	
 	long timeout=20;
+	
 	public void startup(String url) {
 
 		driver=new ChromeDriver();
@@ -34,16 +35,16 @@ public class SelenuimBAse implements SeleniumAPI {
 	}
 
 	@Override
-	public void startup(String browserName, String url) {
+	public void startup(Browser browserName, String url) {
 		switch (browserName) {
-		case "chrome":
+		case CHROME:
 			driver=new ChromeDriver();
 			break;
-		case "FireFox":
+		case FIREFOX:
 			driver=new FirefoxDriver();
 			break;
 			
-		case "edge":
+		case EDGE:
 			driver=new EdgeDriver();
 			break;
 
@@ -72,37 +73,37 @@ public class SelenuimBAse implements SeleniumAPI {
 		
 	}
 
-	public WebElement Element(String type, String values) {
+	public WebElement element(Locators type, String values) {
 		
 		switch (type) {
-		case "id":
+		case ID:
 			return driver.findElement(By.id(values));
 		
 		
-		case "name":
+		case NAME:
 			return driver.findElement(By.name(values));
 		
-		case "xpath":
+		case XPATH:
 			return driver.findElement(By.xpath(values));
 		
 			
-		case "LinkText":
+		case LINKTEXT:
 			return driver.findElement(By.linkText(values));
 			
 			
-		case "className":
+		case CLASSNAME:
 			return driver.findElement(By.className(values));
 			
 			
-		case "tagName" :
+		case TAGNAME :
 			return driver.findElement(By.tagName(values));
 			
 		
-		case "partialLinkText":
+		case PARTIALLINKTEXT:
 			return driver.findElement(By.partialLinkText(values));
 			
 			
-		case"cssSelector":
+		case CSSSELECTOR:
 			return driver.findElement(By.cssSelector(values));
            
             
@@ -118,6 +119,7 @@ public class SelenuimBAse implements SeleniumAPI {
 	
 	@Override
 	public void click(WebElement ele) {
+		wait=new WebDriverWait(driver,Duration.ofSeconds(maxWaittime));
 		WebElement element = wait.until(ExpectedConditions.elementToBeClickable(ele));
 		element.click();
 		
@@ -126,10 +128,26 @@ public class SelenuimBAse implements SeleniumAPI {
 
 	
 	public void type(WebElement ele, String textdata) {
+		wait=new WebDriverWait(driver,Duration.ofSeconds(maxWaittime));
 		WebElement type = wait.until(ExpectedConditions.visibilityOf(ele));
 		type.clear();
 		type.sendKeys(textdata);
 	}
+	
+	
+	public void type(WebElement ele, String textdata,Keys keys) {
+		wait=new WebDriverWait(driver,Duration.ofSeconds(maxWaittime));
+		WebElement type = wait.until(ExpectedConditions.visibilityOf(ele));
+		type.clear();
+		type.sendKeys(textdata,keys);
+	}
+	
+	/*
+	 * public void type(WebElement ele, String textdata,Keys keys0,Keys keys1,Keys
+	 * keys2) { wait=new WebDriverWait(driver,Duration.ofSeconds(maxWaittime));
+	 * WebElement type = wait.until(ExpectedConditions.visibilityOf(ele));
+	 * type.clear(); type.sendKeys(textdata,keys0,keys1,keys2); }
+	 */
 
 	@Override
 	public void append(WebElement ele, String testdata) {
