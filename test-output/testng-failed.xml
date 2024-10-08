@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="FrameWorkBase.IRCTC">
+      <class name="FrameWorkBase.Remit">
         <methods>
-          <include name="ticketBooking"/>
+          <include name="remit"/>
         </methods>
-      </class> <!-- FrameWorkBase.IRCTC -->
+      </class> <!-- FrameWorkBase.Remit -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
