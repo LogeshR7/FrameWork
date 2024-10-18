@@ -9,5 +9,10 @@
   		<artifactId>Details</artifactId>
   		<version>0.0.1-SNAPSHOT</version>
   	</dependency>
+  	<dependency>
+  		<groupId>TestNg</groupId>
+  		<artifactId>Cross</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
+  	</dependency>
   </dependencies>
 </project>

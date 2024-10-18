@@ -105,7 +105,7 @@ public interface SeleniumAPI {
 	 * 
 	 *  this will turn the element is visible or not
 	 */
-	boolean isDisplayed();
+	boolean isDisplayed(WebElement ele);
 	/**
 	 * 
 	 *  This will return the current page url
@@ -117,9 +117,9 @@ public interface SeleniumAPI {
 	 * 
 	 *  This will says the element or field is intertable or not
 	 */
-	boolean isEnabled();
+	boolean isEnabled(WebElement ele);
 
-	
+	boolean isSelected(WebElement ele);
 	
 }
 
