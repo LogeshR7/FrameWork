@@ -1,5 +1,6 @@
 package FrameWorkBase;
 
+import java.awt.RenderingHints.Key;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
@@ -175,6 +176,8 @@ public class SelenuimBAse implements SeleniumAPI {
 		type.clear();
 		type.sendKeys(textdata,keys);
 	}
+	
+	
 	
 	/*
 	 * public void type(WebElement ele, String textdata,Keys keys0,Keys keys1,Keys
