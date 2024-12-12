@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="ExperimentRemit.Remit">
+      <class name="FrameWorkBase.mc">
         <methods>
-          <include name="remit"/>
+          <include name="MCDouble"/>
         </methods>
-      </class> <!-- ExperimentRemit.Remit -->
+      </class> <!-- FrameWorkBase.mc -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
